@@ -14,7 +14,24 @@
 </head>
 <body>
 
-    <div
+    <div id="myElement">Original Text</div>
+    <div id="myDIV">
+        <p>I am a myDIV</p>
+    </div>
+    <button id="myButton">Click Me</button>
     
+    <script>
+        $(document).ready(function() {
+            
+            $("#myElement").text("Modified Text");
+
+           
+            $("#myDIV").addClass("myStyle");
+            
+            $("#myButton").click(function() {
+                alert("Button was clicked!");
+            });
+        });
+    </script>
 </body>
 </html>
