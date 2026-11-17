@@ -23,7 +23,7 @@
                     console.log("Book " + (index + 1) + " (" + book.title + ") Genres: " + book.genres.join(", "));
                 });
         }).fail(function() {
-                console.log("Error: Unable to load books.json");
+                console.error("Error loading books.json. Make sure you are running through a local server(like Live Server in VS Code)");
             });
         });
     </script>
