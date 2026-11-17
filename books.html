@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab4b - Question2</title>
+</head>
+<body>
+
+    <script>
+        $(document).ready(function() {
+
+            $.getJSON("books.json", function(data) {
+              
+                console.log("--- (a) Title of the first book ---");
+                console.log(data.books[0].title);
+
+                console.log("--- (b) Author of the second book ---");
+                console.log(data.books[1].author);
+
+                console.log("--- (c) Genre of all books ---");
+                $.each(data.books, function(index, book) {
+                    console.log("Book " + (index + 1) + " (" + book.title + ") Genres: " + book.genres.join(", "));
+                });
+        }).fail(function() {
+                console.log("Error: Unable to load books.json");
+            });
+        });
+    </script>
+    
+</body>
+</html>
